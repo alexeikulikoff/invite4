@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+
+<div th:replace="fragments/head :: head"></div>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+  
+    <!-- Navigation -->
+<div th:replace="fragments/navmanager :: navmanager"></div>
+    <!-- Intro Header -->
+ <div th:replace="fragments/headermanager :: headermanager"></div> 
+    <!-- About Section -->
+
+    <!-- Download Section -->
+    <section id="table1" class="container content-section">
+       <div class="row">
+                <div class="col-lg-12 col-sm-12 ">
+                  <div th:include="fragments/managertable :: managertable"></div>
+                </div>
+       </div>
+    </section>
+     <section id="managerReport" class="container content-section">
+       <div class="row">
+                <div class="col-lg-12 col-sm-12 ">
+                  <div th:include="fragments/managerreport :: managerreport"></div>
+                </div>
+       </div>
+    </section>
+   <section id="managerUser" class="container content-section">
+       <div class="row">
+                <div class="col-lg-12 col-sm-12 ">
+                  <div th:include="fragments/manageruser :: manageruser"></div>
+                </div>
+       </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p class="footer-p">ЛДЦ МИБС 2017</p>
+        </div>
+    </footer>
+
+
+ <script type="text/javascript" src="/dist/js/invite.min.js" data-th-src="@{/dist/js/invite.min.js}"></script>
+
+    <script th:inline="javascript" >
+	//<![CDATA[
+	           
+	     var $label = {},
+	     $button={},
+	     $error={};
+	     $label.name = [[#{label.CityName}]];
+	     $label.action = [[#{label.action}]];
+	     $label.addInvestigation = [[#{label.addInvestigation}]];
+	     $label.deleteInvestigation = [[#{label.deleteInvestigation}]];
+	     $label.userLogin =[[#{label.userLogin}]];
+	     $label.userPassword =[[#{label.userPassword}]];
+	     $label.userRole = [[#{label.userRole}]];
+	     $label.phone = [[#{label.phone}]];
+	     $label.userEmail =[[#{label.userEmail}]];
+	     $label.doc = [[#{label.doc }]];
+	     $label.admin =[[#{label.admin}]];
+	     $label.manager=[[#{label.manager}]];
+		 $label.fio=[[#{label.fio}]];
+		 $label.comments=[[#{label.comments}]];
+		 $label.date=[[#{label.date}]];
+	     $label.manager=[[#{label.manager}]];
+	     $label.investig=[[#{label.investig}]];
+	     $label.status =[[#{label.status}]];
+	     $label.conclusion=[[#{label.conclusion}]];
+	     $label.status=[[#{label.status}]];
+	     $label.change=[[#{label.change}]];
+	     $label.fiolong=[[#{label.fiolong}]];
+	     $label.userWorkPlace=[[#{label.userWorkPlace}]];
+	     
+	     $label.firstName = [[#{label.firstName}]];
+	     $label.secondName = [[#{label.secondName}]];
+	     $label.sername = [[#{label.sername}]];
+	     
+	     $button.save=[[#{button.save}]];
+	     $button.cansel=[[#{button.cansel}]];
+	     
+	     $label.show=[[#{label.show}]];
+	     $label.hide=[[#{label.hide}]];
+	     
+	     $error.saveCity = [[#{error.saveCity}]];
+	     $error.deleteCity = [[#{error.deleteCity}]];
+	     $error.saveInvestigation = [[#{error.saveInvestigation}]];
+	     $error.deleteInvestigation = [[#{error.deleteInvestigation}]];
+	     
+	     $error.deleteUser =[[#{error.deleteUser}]];
+	     $error.saveUser = [[#{error.saveUser}]];
+	     $error.saveStatus =[[#{error.saveStatus}]];
+	     $error.deleteStatus = [[#{error.deleteStatus}]];
+	     $error.saveDocInvit =[[#{error.saveDocInvit}]];
+	     
+	
+	  //]]>	
+	 </script>
+
+</body>
+
+</html>

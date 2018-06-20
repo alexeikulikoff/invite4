@@ -1,0 +1,28 @@
+ <headeradmin-page th:fragment="headeradmin">
+  <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                    	
+                        <h1 class="brand-heading" th:text="${username}">ФИО</h1>
+                        <br/>
+                        <div class="col-lg-8 col-lg-offset-5 col-sm-8 col-sm-offset-5">
+                        <table>
+                           <tbody>
+						      <tr th:each="info : ${statusinfo}">
+						        <td class="info-text" th:text="${info.status} +'&nbsp;'"></td>
+						        <td class="info-text" th:text="${info.value}"></td>
+						      </tr>
+						    </tbody>
+                         </table>
+                        </div> 
+                        <a href="#admin-lists" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+ </headeradmin-page>

@@ -1,0 +1,30 @@
+{
+  "name": "invite",
+  "version": "0.0.0-ignored",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt qunit"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-concat-css": "^0.3.1",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.0.0",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-qunit": "~0.2.0",
+    "grunt-contrib-uglify": "^2.2.0",
+    "grunt-contrib-watch": "~0.4.0"
+  },
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-uglify": "^2.2.0",
+    "grunt": "^1.0.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "invite ldc ru"
+}

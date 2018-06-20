@@ -1,0 +1,154 @@
+<user-page th:fragment="user">
+
+   <div class="col-lg-12 col-sm-12" style="padding-right: 0px; padding-left: 4px;">
+    <div class="card-box">
+      <div class="panel">
+         <div class="panel-heading"><h4 class="panel-title  panel-title2"><i class="fa fa-building" aria-hidden="true"></i>
+         <span th:text="#{label.user}">Users</span></h4></div>
+         <div class="panel-body">
+            <div class="panel-group">
+               <div class="panel">
+                  <div class="panel-heading">
+                     <button type="button" class="btn-success btn-xs" data-toggle="collapse" data-target="#collapse6" onclick="user.clear('newAgentButtonIcon')"><i id="newAgentButtonIcon" class="fa fa-plus-circle" aria-hidden="true"></i></button>
+                  </div>
+                  <div id="collapse6" class="panel-collapse collapse">
+                     <div class="panel-body">
+                        <form role="form">
+                           <div class="row">
+                            <div class="col-lg-4">
+                              <div  id="userInputGroup" class="form-group">
+                                   <div id="userHumanNameDiv" class="col-lg-12">  
+                                    <label class="control-label" th:text="#{label.userHumanName}+':'">Add City</label>
+                                    <div class="input-group">
+                                       <span  class="input-group-addon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+                                       <input class="form-control" id="userHumanName"/>
+                                       <p id="userNameInfo" class="help-block"></p>
+                                      </div> 
+                                      <br/>   
+                                    </div> 
+                                 <div id="userWorkPlaceDiv" class="col-lg-12">  
+                                    <label class="control-label" th:text="#{label.userWorkPlace}+':'">Work</label>
+                                     <div class="input-group">
+                                       <span  class="input-group-addon"><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                                       <input class="form-control" id="userWorkPlace"/>
+                                 
+                                      </div> 
+                                      <br/>   
+                                    </div> 
+                                  <div id="userFirstnameDiv" class="col-lg-6">
+                                   <label class="control-label" th:text="#{label.userLogin}+':'">Add City</label>
+                                     <div class="input-group">
+                                       <span  class="input-group-addon"><i class="fa fa-sign-in" aria-hidden="true"></i></span>
+                                       <input class="form-control" id="userFirstname"/>
+                                       <p id="userNameInfo" class="help-block"></p>
+                                      </div> 
+                                      <br/>
+                                   </div>
+                                   <div  id="userPasswordDiv" class="col-lg-6">   
+                                    <label class="control-label" th:text="#{label.userPassword}+':'">Add City</label>
+                                     <div class="input-group">
+                                       <span  class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                                       <input class="form-control" id="userPassword"/>
+                                       <p id="userNameInfo" class="help-block"></p>
+                                      </div> 
+                                      <br/>
+                                    </div>
+                                   <div  id="userRoleSelectDiv" class="col-lg-6">     
+                                     <label class="control-label" th:text="#{label.userRole}+':'">Add City</label>
+                                     <div class="input-group">
+                                       <span  class="input-group-addon"><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+                                       
+                                       <select id="userRoleSelect" class="form-control" >
+                                        	<option value="DOC">Врач</option>
+                                        	<option value="MANAGER">Менеджер</option>
+                                        	<option value="ADMIN">Администратор</option>
+                                       </select>
+                                       <p id="userNameInfo" class="help-block"></p>
+                                      </div> 
+                                      <br/>
+                                 </div>
+                                  <div id="userCitySelectDiv" class="col-lg-6">     
+                                     <label class="control-label" th:text="#{label.city}+':'">Add City</label>
+                                     <div class="input-group">
+                                       <span  class="input-group-addon"><i class="fa fa-building" aria-hidden="true"></i></span>
+                                       
+                                       <select id="userCitySelect" class="form-control" >
+                                        	<option value="Архангельск">Архангельск</option>
+                                        	<option value="MANAGER">Астрахань</option>
+                                        	<option value="ADMIN">Белгород</option>
+                                       </select>
+                                       <p id="userNameInfo" class="help-block"></p>
+                                      </div> 
+                                      <br/>
+                                 </div>
+                                   <div id="userEmailDiv" class="col-lg-6">     
+                                     <label class="control-label" th:text="#{label.userEmail}+':'">Add City</label>
+                                     <div class="input-group">
+                                       <span  class="input-group-addon"><i class="fa fa fa-at" aria-hidden="true"></i></span>
+                                       <input class="form-control" id="userEmail"/>
+                                       <p id="userEmailInfo" class="help-block"></p>
+                                      </div> 
+                                      <br/>
+                                 </div>
+                                  <div id="userPhoneDiv" class="col-lg-6">     
+                                     <label class="control-label" th:text="#{label.phone}+':'">Add City</label>
+                                     <div class="input-group">
+                                       <span  class="input-group-addon"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                                        <input class="form-control" id="userPhone"/>
+                                       <p id="userUserPhone" class="help-block"></p>
+                                      </div> 
+                                      <br/>
+                                 </div>
+                            </div>
+                           </div>
+                           
+                         </div>  
+                           <div style="padding-top: 10px;"></div>
+                           <div class="row">
+                              <div class="col-lg-6 col-sm-6">
+                                 <div class="input-group ">
+                                    <button type="button" class="btn-primary btn-xs" onclick="user.action()"><i class="fa fa-floppy-o" aria-hidden="true"></i></button>
+                                 </div>
+                              </div>
+                              <div id="userSaveUpdateSuccess" class="col-lg-12 col-sm-12 hidden" style="padding-top: 25px;">
+                              <div class="alert alert-success">
+								  <strong th:text="#{label.save}">Success</strong>
+								</div>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                     
+                     
+                  </div>
+               </div>
+            </div>
+             <div id="userDelAlert" class="hidden">
+               <div class="row">
+                  <div class="col-lg-4 col-sm-4 pull-right">
+                     <div class="panel panel-default panel-warning">
+                      <div class="panel-body">
+                         <div class="input-group col-lg-12 col-sm-12">
+	                         <span ><i class="fa fa-exclamation-triangle fa-lg"  style="color:#e62e00" aria-hidden="true"></i></span>
+	                         <span><strong th:text="#{label.newPassword}+':'">New Password</strong>&nbsp;</span><input type="hidden" id="userDelInfo"/><input type="text" class="filter-control" id="newPasswd"/>
+	                         <button type="button" class="btn-success btn-xs pull-right btn-space" onclick="user.changePassword()" ><i class="fa fa-check" aria-hidden="true"></i></button>
+	                         <button type="button" class="btn-danger btn-xs pull-right btn-space" onclick="user.cancel()"><i class="fa fa-ban" aria-hidden="true"></i></button>
+	                        </div>  
+	                      </div>
+                     </div> 
+                  </div>
+               </div>
+            </div>
+         
+          
+         
+            <br/>
+            <table id="tableUser" class="table table-striped  table-hover" ></table>
+            <br/>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+</user-page>

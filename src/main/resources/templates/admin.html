@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Inviter</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link type="text/css" rel="stylesheet" href="/dist/vendor/bootstrap/css/bootstrap.min.css" data-th-href="@{/dist/vendor/bootstrap/css/bootstrap.min.css}" />
+    <!-- MetisMenu CSS -->
+    <link type="text/css" rel="stylesheet" href="/dist/vendor/metisMenu/metisMenu.min.css" data-th-href="@{/dist/vendor/metisMenu/metisMenu.min.css}" />
+    <!-- Custom CSS -->
+    <link type="text/css" rel="stylesheet" href="/dist/dist/css/sb-admin-2.css" data-th-href="@{/dist/dist/css/sb-admin-2.css}" />
+    <!-- Morris Charts CSS -->
+    <link type="text/css" rel="stylesheet" href="/dist/vendor/morrisjs/morris.css" data-th-href="@{/dist/vendor/morrisjs/morris.css}" />
+    <!-- Custom Fonts -->
+   
+    <link type="text/css" rel="stylesheet" href="/dist/vendor/font-awesome/css/font-awesome.min.css" data-th-href="@{/dist/vendor/font-awesome/css/font-awesome.min.css}" />
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body >
+    <div id="wrapper">
+    
+        <!-- Navigation -->
+        <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                  
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+              
+                <!-- /.dropdown -->
+           
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="/invite/login"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" id="side-menu">
+                     
+                        <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Настройки</a>
+                        </li>
+                          <li>
+                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i>Отчеты</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+          <div id="error" class="alert alert-danger hidden ">
+		    <strong>Error!</strong><span id="errorMessage"> Indicates a dangerous or potentially negative action.</span>
+	 	 </div>
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <h1 class="page-header">Админка</h1>
+                </div>
+                <div class="col-lg-12 col-sm-12">
+                     <div class="col-lg-3 col-sm-2">
+                     	<div th:include="fragments/city :: city"></div>
+                     </div>
+                     <div class="col-lg-3 col-sm-2">
+                     	<div th:include="fragments/investigation :: investigation"></div>
+                     </div>
+                     <div class="col-lg-6 col-sm-8">
+                     	<div th:include="fragments/user :: user"></div>
+                     </div>
+                
+                </div>   
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+       
+            <!-- /.row -->
+       
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    <div id="footer">
+	   <div class="container">
+	     <p class="muted credit text-center">©&nbsp;2017&nbsp;Inviter</p>
+	   </div>
+   	</div>
+    <!-- jQuery -->
+  
+    <script type="text/javascript" src="/dist/vendor/jquery/jquery.min.js" data-th-src="@{/dist/vendor/jquery/jquery.min.js}"></script> 
+    <!-- Bootstrap Core JavaScript -->
+   
+    <script type="text/javascript" src="/dist/vendor/bootstrap/js/bootstrap.min.js" data-th-src="@{/dist/vendor/bootstrap/js/bootstrap.min.js}"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+   
+    <script type="text/javascript" src="/dist/vendor/metisMenu/metisMenu.min.js" data-th-src="@{/dist/vendor/metisMenu/metisMenu.min.js}"></script>
+    <!-- Morris Charts JavaScript -->
+    
+    <script type="text/javascript" src="/dist/vendor/raphael/raphael.min.js" data-th-src="@{/dist/vendor/raphael/raphael.min.js}"></script>
+    
+    
+    <script type="text/javascript" src="/dist/vendor/morrisjs/morris.min.js" data-th-src="@{/dist/vendor/morrisjs/morris.min.js}"></script>
+   
+    
+    <script type="text/javascript" src="/dist/data/morris-data.js" data-th-src="@{/dist/data/morris-data.js}"></script>
+    <!-- Custom Theme JavaScript -->
+  
+    <script type="text/javascript" src="/dist/dist/js/sb-admin-2.js" data-th-src="@{/dist/dist/js/sb-admin-2.js}"></script>
+    
+    <script type="text/javascript" src="/src/js/jquery/jquery.dataTables.min.js" data-th-src="@{/src/js/jquery/jquery.dataTables.min.js}"></script>
+    <script type="text/javascript" src="/src/js/jquery/jquery.datetimepicker.js" data-th-src="@{/src/js/jquery/jquery.datetimepicker.js}"></script>
+
+    <script type="text/javascript" src="/src/js/knockout/knockout.js" data-th-src="@{/src/js/knockout/knockout.js}"></script>
+    <script type="text/javascript" src="/src/js/app/city.js" data-th-src="@{/src/js/app/city.js}"></script>
+    <script type="text/javascript" src="/src/js/app/core.js" data-th-src="@{/src/js/app/core.js}"></script>
+    <script type="text/javascript" src="/src/js/app/investigation.js" data-th-src="@{/src/js/app/investigation.js}"></script>
+    <script type="text/javascript" src="/src/js/app/user.js" data-th-src="@{/src/js/app/user.js}"></script>
+    <script type="text/javascript" src="/src/js/app/app.js" data-th-src="@{/src/js/app/app.js}"></script>
+    
+    <script th:inline="javascript" >
+	//<![CDATA[
+	           
+	     var $label = {},
+	      $error={};
+	     
+	     $label.name = [[#{label.CityName}]];
+	     $label.action = [[#{label.action}]];
+	     $label.addInvestigation = [[#{label.addInvestigation}]];
+	     $label.deleteInvestigation = [[#{label.deleteInvestigation}]];
+	     $label.userLogin =[[#{label.userLogin}]];
+	     $label.userPassword =[[#{label.userPassword}]];
+	     $label.userRole = [[#{label.userRole}]];
+	     $label.phone = [[#{label.phone}]];
+	     $label.userEmail =[[#{label.userEmail}]];
+	     $label.doc = [[#{label.doc }]];
+	     $label.admin =[[#{label.admin}]];
+	     $label.manager=[[#{label.manager}]];
+
+	     
+	     
+	     $error.saveCity = [[#{error.saveCity}]];
+	     $error.deleteCity = [[#{error.deleteCity}]];
+	     $error.saveInvestigation = [[#{error.saveInvestigation}]];
+	     $error.deleteInvestigation = [[#{error.deleteInvestigation}]];
+	     
+	     $error.deleteUser =[[#{error.deleteUser}]];
+	     $error.saveUser = [[#{error.saveUser}]];
+	
+	  //]]>	
+	 </script>
+	           
+
+</body>
+
+</html>

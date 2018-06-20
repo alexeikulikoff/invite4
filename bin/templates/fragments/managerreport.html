@@ -1,0 +1,77 @@
+<managerreport-page th:fragment="managerreport">
+   <div class="col-lg-12 col-sm-12" style="padding-right: 0px; padding-left: 4px;">
+    <div class="card-box">
+      <div class="panel">
+         <div class="panel-heading"><h4 class="panel-title  panel-title2"><i class="fa fa-building" aria-hidden="true"></i>
+         <span th:text="#{label.report}">Report</span></h4></div>
+          <div class="panel-body">
+                     <div class="panel-group">
+               <div class="panel col-lg-10">
+					   <form role="form">
+                           <div class="row">
+                              <div  class="form-group">
+                                   <div  class="col-lg-2 col-sm-2 padding-5px">
+                                     <label class="control-label" th:text="#{label.startDate}+':'">Start Date</label>
+                                       <div class="input-group">
+                                         <span  class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                     	 <input id="reportTablePickerFrom" type="text" class="form-control" name="from" />
+                                       </div>	 
+                                  </div>
+                                   <div  class="col-lg-2 col-sm-2 padding-5px" >
+                                     <label class="control-label" th:text="#{label.endDate}+':'">Start Date</label>
+                                        <div class="input-group">
+                                         <span  class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                     		<input id="reportTablePickerTo" type="text" class="form-control" name="to"  />
+                                     	</div>	
+                                  </div>
+                                  <div  class="col-lg-3 col-sm-3 padding-5px" >
+                                     <label class="control-label" th:text="#{label.doc}+':'">Doc</label>
+                                      <select id="reportDoctorSelect" class="form-control"  >
+										
+									  </select>
+                                 </div>
+                                 <div  class="col-lg-3 col-sm-3 padding-5px" >
+                                     <label class="control-label" th:text="#{label.investigation}+':'">Start Date</label>
+                                      <select id="reportInvestigationSelect" class="form-control"  >
+										
+									  </select>
+                                  </div>
+                                 <div  class="col-lg-3 col-sm-3 padding-5px" >
+                                     <label class="control-label" th:text="#{label.status}+':'">Start Date</label>
+                                      <select id="reportTableInvestigationSelect" class="form-control"  >
+										
+									  </select>
+                                  </div>
+                                  <div  class="col-lg-1 col-sm-1" >
+    							   <label class="control-label" >&nbsp;</label>
+							       <button type="button" class="btn btn-primary btn-sm center-block" onclick="report.createReport()" th:text="#{button.apply}">Apply</button>
+                                  </div>
+                                 <div  class="col-lg-1 col-sm-1" >
+    							   <label class="control-label" >&nbsp;</label>
+							       <button type="button" class="btn btn-primary btn-sm center-block" onclick="report.hideReport()" th:text="#{label.hide}">Hide</button>
+                                  </div>
+                                  
+                              </div>
+                            </div>  
+						</form>
+        
+		   
+		     </div>
+		     </div> 
+         </div>
+         <div class="panel-body">
+         <div id="managerReportContainer" class="col-lg-12 col-sm-12">
+
+		   </div>
+           <div id="tableManagerReportId" class="col-lg-8 col-sm-8" >
+<!--              <table id="tableManager" class="table table-striped table-bordered table-hover" ></table> -->
+               <table id="tableManagerReport"  class="table table-striped  table-hover"  ></table>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+</managerreport-page>
