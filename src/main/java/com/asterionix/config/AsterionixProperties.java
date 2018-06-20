@@ -3,7 +3,7 @@ package com.asterionix.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(locations = "classpath:reports.properties",  prefix = "reports")
+//@ConfigurationProperties(locations = "classpath:reports.properties",  prefix = "reports")
 public class AsterionixProperties {
     
     private String host;
