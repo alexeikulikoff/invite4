@@ -19,7 +19,8 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
-apply plugin: 'spring-boot'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
 
 ext {
     springSecurityVersion = "4.0.4.RELEASE"
