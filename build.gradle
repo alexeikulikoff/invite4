@@ -32,7 +32,11 @@ ext {
 
 repositories {
     mavenCentral()
+    jcenter()
     maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'http://central.maven.org/maven2' }
+    
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
