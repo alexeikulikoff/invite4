@@ -80,28 +80,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return new SecurityEvaluationContextExtension();
 		
 	}
-/*	 @Bean
-	  public ConfigBean configBean() {
-	    	Properties prop = new Properties();
-	    	InputStream input = null;
-	     	ConfigBean configBean = new ConfigBean();
-	    	try {
-				input = new FileInputStream("/etc/asterionix/cdr-viewer.conf");
-		
-				try {
-					prop.load(input);
-				
-					configBean.setSounds(prop.getProperty("sounds"));
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-	       
-	    	} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    	return configBean;
-	    }
-*/	
+
 }
