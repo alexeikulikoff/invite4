@@ -7,6 +7,7 @@
  * user guide available at https://docs.gradle.org/2.11/userguide/tutorial_java_projects.html
  */
 
+/*
 buildscript {
     repositories {
         mavenCentral()
@@ -16,6 +17,8 @@ buildscript {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE")
     }
 }
+
+*/
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
