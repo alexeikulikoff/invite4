@@ -7,10 +7,10 @@
  * user guide available at https://docs.gradle.org/2.11/userguide/tutorial_java_projects.html
  */
 
-/*
+
 buildscript {
     repositories {
-        mavenCentral()
+//        mavenCentral()
     }
 
     dependencies {
@@ -18,7 +18,7 @@ buildscript {
     }
 }
 
-*/
+
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
