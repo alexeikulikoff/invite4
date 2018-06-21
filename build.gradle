@@ -11,6 +11,12 @@
 buildscript {
     repositories {
 //        mavenCentral()
+ 	 mavenCentral()
+    jcenter()
+    maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'http://central.maven.org/maven2' }
+    
     }
 
     dependencies {
