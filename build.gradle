@@ -10,8 +10,7 @@
 
 buildscript {
     repositories {
-//        mavenCentral()
- //	 mavenCentral()
+
     jcenter()
     maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
     maven { url 'https://repo.spring.io/snapshot' }
@@ -40,7 +39,7 @@ ext {
 }
 
 repositories {
-  //  mavenCentral()
+
     jcenter()
     maven { url "https://repository.jboss.org/nexus/content/repositories/releases" }
     maven { url 'https://repo.spring.io/snapshot' }
