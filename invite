@@ -1,0 +1,140 @@
+#!/bin/sh
+#
+# invite	Start Invite 
+#
+# chkconfig: 35 90 10
+# description:	Starts, stops Invite
+#
+#
+### BEGIN INIT INFO
+# Provides: invite
+# Required-Start:
+# Required-Stop:
+# Default-Start: 2 3 4 5
+# Default-Stop: 0 1 6
+# Short-Description: start  invite 
+# Description: Start, stop invite
+### END INIT INFO
+PORT=80
+
+TIMEOUT=60
+JAVA=/opt/jdk1.8.0_171/bin/java
+
+APPNAME=invite
+APPJAR=invite.jar
+INSTALL_DIR=/home/admin2/github/invite4/build/libs
+CONF_DIR=/home/admin2/github/invite4/build/resources/main
+
+APP=$INSTALL_DIR/$APPJAR
+
+wait_start() {
+	
+	local i=0
+	listen="LISTEN"
+	printf "["
+	while : ; do
+		res=`netstat -at -n | grep $PORT`
+		if printf -- '%s' "$res" | egrep -q -- "$listen"
+		then
+		     printf "]"
+		     printf "\n"
+	             echo "$NAME started!"
+		     return 1
+		fi
+	     
+	        if [ $i = $TIMEOUT ] ; then
+			echo "The Invite instance did not start within $TIMEOUT seconds. Please read the log files to discover problems."
+	                return 1
+	        fi
+	        sleep 1
+	        i=$(($i+1))
+		printf "*"
+	done
+	
+}
+check_status() {
+
+ # s=`ps -C 'java -jar $APP' -o pid h`
+
+  s=`ps aux | grep i[n]vite.jar | awk '{print $2}'`
+
+  if [ $s ] ; then
+    return $s
+  fi
+
+  return 0
+
+}
+
+# Starts Invite
+start() {
+
+  check_status
+
+  pid=$?
+
+  if [ $pid -ne 0 ] ; then
+    echo "Invite  is already started"
+    exit 1
+  fi
+  echo -n "Starting Invite: "
+
+  $JAVA -jar $APP --spring.config.location=$CONF_DIR/application.properties &
+  wait_start
+
+}
+
+# Stops Invite
+stop() {
+
+ # PID=`ps -C 'java -jar $APP' -o pid h`
+  
+  PID=`ps aux | grep i[n]vite.jar | awk '{print $2}'`
+
+   if [ -z $PID ] ; then
+     echo "Invite is already stopped"
+     exit 1
+    fi 
+#  if [ $PID -eq 0 ] ; then
+#    echo "Invite is already stopped"
+#    exit 1
+#  fi
+
+  
+  echo -n "Stopping Invite: "
+  kill -9 $PID &
+  echo "OK"
+}
+# Show  Invite  status
+status() {
+
+  check_status
+
+  if [ $? -ne 0 ] ; then
+    echo "Invite  is started"
+  else
+    echo "Invite is stopped"
+  fi
+
+}
+
+case "$1" in
+  start)
+    start
+    ;;
+  stop)
+    stop
+    ;;
+  status)
+    status
+    ;;
+  restart|reload)
+    stop
+    start
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|reload|status}"
+    exit 1
+esac
+
+exit 0
