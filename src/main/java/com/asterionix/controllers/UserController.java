@@ -24,7 +24,7 @@ import com.asterionix.dao.UserRepository;
 import com.asterionix.exception.EntitySaveException;
 
 @Controller
-@EnableConfigurationProperties(AsterionixProperties.class)
+//@EnableConfigurationProperties(AsterionixProperties.class)
 public class UserController {
 	static Logger logger = LoggerFactory.getLogger(UserController.class);
 	@Autowired

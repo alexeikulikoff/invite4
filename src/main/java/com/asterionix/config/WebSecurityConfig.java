@@ -36,13 +36,13 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 //@EnableGlobalMethodSecurity(prePostEnabled = true)
 // tag::enable-redis-httpsession[]
 @EnableRedisHttpSession(maxInactiveIntervalInSeconds = 600)
-@EnableConfigurationProperties(AsterionixProperties.class)
+//@EnableConfigurationProperties(AsterionixProperties.class)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	static Logger logger = LoggerFactory.getLogger(WebSecurityConfig.class);
 	 
-	@Autowired
-	private AsterionixProperties props;
+	//@Autowired
+	//private AsterionixProperties props;
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
